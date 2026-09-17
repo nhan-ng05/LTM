@@ -1,4 +1,5 @@
 import P2.bai5.App5;
+import P2.bai6.App6;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,6 +19,7 @@ public class Main {
         // System.out.println("Co loi xay ra: " + e.getMessage());
         // }
 
-        App5 app5 = new App5();
+        // App5 app5 = new App5();
+        // new App6().runApp();
     }
 }
