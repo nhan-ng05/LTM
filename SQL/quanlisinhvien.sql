@@ -2,11 +2,11 @@
 -- DATABASE QUẢN LÝ SINH VIÊN
 -- ==========================================
 
-CREATE DATABASE IF NOT EXISTS quanly_sinhvien
+CREATE DATABASE IF NOT EXISTS quanlysinhvien
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
 
-USE quanly_sinhvien;
+USE quanlysinhvien;
 
 
 -- ==========================================
