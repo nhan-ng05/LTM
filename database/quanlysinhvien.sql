@@ -11,6 +11,8 @@ USE quanlysinhvien;
 
 -- ==========================================
 -- XÓA BẢNG CŨ NẾU ĐÃ TỒN TẠI
+-- (CHÚ Ý: chạy lại file này sẽ mất toàn bộ dữ liệu bạn đã thêm/sửa trên app,
+--  vì dữ liệu được reset về 20 sinh viên mẫu bên dưới)
 -- ==========================================
 
 DROP TABLE IF EXISTS sinhvien;
@@ -18,14 +20,19 @@ DROP TABLE IF EXISTS sinhvien;
 
 -- ==========================================
 -- TẠO BẢNG SINH VIÊN
+-- Thêm CHECK để DB cũng tự chặn điểm ngoài khoảng 0 - 10
+-- (MySQL >= 8.0.16 mới thực thi CHECK, bản cũ sẽ bỏ qua nhưng không lỗi)
 -- ==========================================
 
 CREATE TABLE sinhvien (
     maSV VARCHAR(20) PRIMARY KEY,
     hoTen VARCHAR(100) NOT NULL,
-    diemToan DECIMAL(4,2),
-    diemVan DECIMAL(4,2),
-    diemAnh DECIMAL(4,2)
+    diemToan DECIMAL(4,2) NOT NULL DEFAULT 0,
+    diemVan DECIMAL(4,2) NOT NULL DEFAULT 0,
+    diemAnh DECIMAL(4,2) NOT NULL DEFAULT 0,
+    CONSTRAINT chk_diemToan CHECK (diemToan BETWEEN 0 AND 10),
+    CONSTRAINT chk_diemVan CHECK (diemVan BETWEEN 0 AND 10),
+    CONSTRAINT chk_diemAnh CHECK (diemAnh BETWEEN 0 AND 10)
 );
 
 
